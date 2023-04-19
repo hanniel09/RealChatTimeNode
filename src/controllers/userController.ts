@@ -1,18 +1,11 @@
-import { Request, Response } from 'express';
+import express from 'express';
+import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
-import User from '../models/user'
+import User from "../models/user"
+import UserService from '../services/UserService';
 
-class UserController {
-    public async createUser(req: Request, res: Response): Promise<Response> {
-      try {
-        const { username, password } = req.body;
-        const user = new User({ username, password });
-        await user.save();
-        return res.status(201).json(user);
-      } catch (error) {
-        return res.status(400).json({ error: error.message });
-    }
-  }
-  public async 
+
+class UserController extends UserService {
+  
 }
-export default new UserController();
+export default UserController;
