@@ -3,7 +3,6 @@ import bcrypt from 'bcrypt';
 import { Request, Response } from 'express';
 import User from '../models/user';
 
-
 class AuthService {
   public async createdUser(req: Request, res: Response): Promise<Response> {
     const { username, password } = req.body;
@@ -23,5 +22,6 @@ class AuthService {
     return res.json({ token });
   }
 }
+
 
 export default new AuthService();
